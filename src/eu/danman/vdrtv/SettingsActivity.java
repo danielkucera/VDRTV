@@ -24,7 +24,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     	VDRTV global = (VDRTV) getApplicationContext();
     	
     	global.reload = true;
-//    	Log.d("preference","changed");
     }
 
 }
