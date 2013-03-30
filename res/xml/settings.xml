@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="Settings">
+    <PreferenceCategory android:title="Playlist settings">
+    <EditTextPreference android:defaultValue="http://host:8080/EXT;TYPE=android;VRATE=[BITRATE]/channels.m3u" android:title="Playlist URL" android:key="playlist_url" />
+    <EditTextPreference android:key="playlist_qual" android:title="Bitrate (quality)" android:defaultValue="300" android:numeric="integer"/>
+</PreferenceCategory><PreferenceCategory android:title="Network settings"><CheckBoxPreference android:title="Use firewall opener" android:key="open_firewall" /><EditTextPreference android:title="URL for firewall change" android:key="firewall_url" android:defaultValue="http://host/ip" android:dependency="open_firewall" />
+    <EditTextPreference android:key="http_timeout" android:title="HTTP timeout (ms)" android:defaultValue="3000" android:numeric="integer"/>
+</PreferenceCategory>
+    
+    
+    
+    
+    
+
+</PreferenceScreen>
