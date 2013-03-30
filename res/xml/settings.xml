@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="Settings">
     <PreferenceCategory android:title="Playlist settings">
-    <EditTextPreference android:defaultValue="http://host:8080/EXT;TYPE=android;VRATE=[BITRATE]/channels.m3u" android:title="Playlist URL" android:key="playlist_url" />
-    <EditTextPreference android:key="playlist_qual" android:title="Bitrate (quality)" android:defaultValue="300" android:numeric="integer"/>
+    <EditTextPreference android:key="playlist_host" android:title="Host" android:defaultValue="host" android:summary=" IP or hostname where vdr runs"/>
+    <EditTextPreference android:key="playlist_port" android:title="Port" android:defaultValue="8080" android:numeric="integer" android:summary="Streamdev http port"/>
+    <EditTextPreference android:key="playlist_qual" android:title="Bitrate" android:defaultValue="300" android:numeric="integer" android:summary="Desired bitrate of stream"/>
+    <EditTextPreference android:defaultValue="http://[HOST]:[PORT]/EXT;TYPE=android;VRATE=[BITRATE]/channels.m3u" android:title="Playlist URL" android:key="playlist_url" android:summary="Expert setting, do not edit!"/>
 </PreferenceCategory><PreferenceCategory android:title="Network settings"><CheckBoxPreference android:title="Use firewall opener" android:key="open_firewall" /><EditTextPreference android:title="URL for firewall change" android:key="firewall_url" android:defaultValue="http://host/ip" android:dependency="open_firewall" />
     <EditTextPreference android:key="http_timeout" android:title="HTTP timeout (ms)" android:defaultValue="3000" android:numeric="integer"/>
 </PreferenceCategory>

@@ -84,9 +84,11 @@ public class VDRTV extends Application {
     	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
     	Boolean open_firewall = prefs.getBoolean("open_firewall", false);
     	String firewall_url = prefs.getString("firewall_url", "");
-    	String bitrate = prefs.getString("playlist_qual", "");
+    	String bitrate = prefs.getString("playlist_qual", "300");
+    	String host = prefs.getString("playlist_host", "");
+    	String port = prefs.getString("playlist_port", "");
     	
-    	String playlistURL = prefs.getString("playlist_url", "").replace("[BITRATE]", bitrate);
+    	String playlistURL = prefs.getString("playlist_url", "").replace("[BITRATE]", bitrate).replace("[HOST]", host).replace("[PORT]", port);
 
 		String m3ulist = get(playlistURL);
     	
@@ -282,7 +284,10 @@ public class VDRTV extends Application {
 			e.printStackTrace();
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
+		} catch (IllegalArgumentException e){
+			e.printStackTrace();
 		}
+
 		// return body
 		//Log.d("body",body);
 		
